@@ -1,0 +1,2 @@
+module Admin::TrabajadorsHelper
+end

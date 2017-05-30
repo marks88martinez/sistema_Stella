@@ -1,0 +1,49 @@
+
+<div class="login-box">
+  <div class="login-logo">
+    <b>Stella</b>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Iniciar su sesión</p>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group has-feedback">
+        <%= f.email_field :email, autofocus: "true", class: "form-control", placeholder: "E-mail", type: "email", autofocus: "autofocus" %>
+
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <%= f.email_field :password, autofocus: "true", class: "form-control", placeholder: "password", type: "password", autofocus: "autofocus" %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label class="">
+              <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end -%>
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+            <%= f.submit "Log in", class:"btn btn-primary btn-block btn-flat"  %>
+
+        </div>
+        <!-- /.col -->
+      </div>
+
+
+    <% end %>
+
+    <!-- /.social-auth-links -->
+
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
